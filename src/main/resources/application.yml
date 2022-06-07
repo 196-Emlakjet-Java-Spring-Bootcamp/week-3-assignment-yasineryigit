@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/rabbitmq_app
+    password: root
+  jpa:
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: '4040'
+
+#uygulama içinde kullanmak üzere dynamic path belirliyoruz
+sr:
+  rabbit:
+    queue:
+      name: sales-advertisement-queue
+    exchange:
+      name: sales-advertisement-exchange
+    routing:
+      name: sales-advertisement-routing
+
+
+
+
+
+logging:
+  level:
+    org:hibernate:SQL: debug
+
+
+
+
