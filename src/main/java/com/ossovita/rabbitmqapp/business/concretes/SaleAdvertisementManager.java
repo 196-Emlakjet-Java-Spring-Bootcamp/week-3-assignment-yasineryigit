@@ -11,6 +11,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SaleAdvertisementManager implements SaleAdvertisementService {
 
@@ -51,5 +53,10 @@ public class SaleAdvertisementManager implements SaleAdvertisementService {
         rabbitTemplate.convertAndSend(directExchange.getName(), routingName, saleAdvertisementInDB);
 
         return createSaleAdvertisementDto;
+    }
+
+    @Override
+    public List<SaleAdvertisement> getAllSaleAdvertisements() {
+        return saleAdvertisementRepository.findAll();
     }
 }

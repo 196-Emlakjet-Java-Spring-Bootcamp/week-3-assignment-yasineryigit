@@ -23,7 +23,7 @@ public class SaleAdvertisementConsumer {
         try {
             //sleep for 2 min
             log.info("Consumed message.. Sleeping for 2 min  : " + saleAdvertisement.toString());
-            Thread.sleep(120 * 1000);
+            Thread.sleep(10 * 1000);//10 sec for test
             saleAdvertisement.setPriceGraphPath(UUID.randomUUID().toString() + ".png created by worker 1");
             saleAdvertisementRepository.save(saleAdvertisement);
         } catch (InterruptedException ie) {

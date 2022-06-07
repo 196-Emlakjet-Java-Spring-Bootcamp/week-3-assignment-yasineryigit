@@ -22,8 +22,6 @@ public class CreateSaleAdvertisementDto {
     @NotBlank
     private String detailMessage;
 
-    private String priceGraphPath;//will be filled by consumer
-
     @NotBlank
     private String userName;
 
