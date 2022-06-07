@@ -49,7 +49,7 @@ public class SaleAdvertisementManager implements SaleAdvertisementService {
 
         SaleAdvertisement saleAdvertisementInDB = saleAdvertisementRepository.save(saleAdvertisement);
 
-        //send message to queue
+        //send message to queue by using direct exchange
         rabbitTemplate.convertAndSend(directExchange.getName(), routingName, saleAdvertisementInDB);
 
         return createSaleAdvertisementDto;

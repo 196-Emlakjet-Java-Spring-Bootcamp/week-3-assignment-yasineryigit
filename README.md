@@ -8,5 +8,6 @@ RabbitMQ Application
 - Validation
 - Custom Error Handler
 - Lombok
+- SwaggerUI
 - PostgreSQL
 

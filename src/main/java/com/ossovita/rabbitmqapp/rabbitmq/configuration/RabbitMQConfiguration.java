@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfiguration {
 
+    //get values from properties place holder
     @Value("${sr.rabbit.queue.name}")
     private String queueName;
 
@@ -35,6 +36,7 @@ public class RabbitMQConfiguration {
         return new DirectExchange(exchangeName);
     }
 
+    //queue'yu direct exchange'a verilen routingName ile bağlar
     @Bean
     Binding binding(Queue queue, DirectExchange directExchange) {
         return BindingBuilder.bind(queue).to(directExchange).with(routingName);

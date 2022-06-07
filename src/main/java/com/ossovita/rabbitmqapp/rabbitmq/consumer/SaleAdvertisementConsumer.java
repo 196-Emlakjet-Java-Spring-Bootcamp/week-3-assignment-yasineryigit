@@ -18,7 +18,7 @@ public class SaleAdvertisementConsumer {
         this.saleAdvertisementRepository = saleAdvertisementRepository;
     }
 
-    @RabbitListener(queues = "sales-advertisement-queue")
+    @RabbitListener(queues = "${sr.rabbit.queue.name}")//get queue name from application.yml
     private void addPriceGraphPathToSaleAdvertisement(SaleAdvertisement saleAdvertisement) {
         try {
             //sleep for 2 min
